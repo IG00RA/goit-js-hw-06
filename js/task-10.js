@@ -6,7 +6,7 @@ const inputObj = document.querySelector("input[type='number']");
 const createObj = document.querySelector("button[data-create]");
 const destroyObj = document.querySelector("button[data-destroy]");
 const divObj = document.querySelector("#boxes");
-let amount = 1;
+let amount = 0;
 function inputFunction() {
   amount = inputObj.value;
 }
