@@ -1,5 +1,5 @@
 const inputObj = document.querySelector("#validation-input");
-const maxLength = inputObj.attributes[2].value;
+const maxLength = inputObj.dataset.length;
 inputObj.addEventListener("blur", submitFunc);
 function submitFunc() {
   if (inputObj.value.length > maxLength) {
