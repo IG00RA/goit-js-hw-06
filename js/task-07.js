@@ -1,6 +1,6 @@
-const inputObj = document.querySelector("#font-size-control");
-const textObj = document.querySelector("#text");
-inputObj.addEventListener("input", fontChenge);
+const inputElem = document.querySelector("#font-size-control");
+const textElem = document.querySelector("#text");
+inputElem.addEventListener("input", fontChenge);
 function fontChenge() {
-  textObj.style.fontSize = `${inputObj.value}px`;
+  textElem.style.fontSize = `${inputElem.value}px`;
 }

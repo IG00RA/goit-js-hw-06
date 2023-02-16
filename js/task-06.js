@@ -1,11 +1,11 @@
-const inputObj = document.querySelector("#validation-input");
-const maxLength = inputObj.dataset.length;
-inputObj.addEventListener("blur", submitFunc);
+const inputElem = document.querySelector("#validation-input");
+const maxLength = inputElem.dataset.length;
+inputElem.addEventListener("blur", submitFunc);
 function submitFunc() {
-  if (inputObj.value.length > maxLength) {
-    inputObj.classList.remove("valid");
-    return inputObj.classList.add("invalid");
+  if (inputElem.value.length > maxLength) {
+    inputElem.classList.remove("valid");
+    return inputElem.classList.add("invalid");
   }
-  inputObj.classList.remove("invalid");
-  inputObj.classList.add("valid");
+  inputElem.classList.remove("invalid");
+  inputElem.classList.add("valid");
 }

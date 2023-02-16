@@ -1,13 +1,13 @@
-const inputObj = document.querySelector("#name-input");
-const spanObj = document.querySelector("#name-output");
+const inputElem = document.querySelector("#name-input");
+const spanElem = document.querySelector("#name-output");
 
-inputObj.addEventListener("input", inputFunc);
-inputObj.addEventListener("blur", () => {
-  if (spanObj.textContent === "") {
-    spanObj.textContent = "Anonymous";
+inputElem.addEventListener("input", inputFunc);
+inputElem.addEventListener("blur", () => {
+  if (spanElem.textContent === "") {
+    spanElem.textContent = "Anonymous";
   }
 });
 
 function inputFunc(event) {
-  spanObj.textContent = event.currentTarget.value;
+  spanElem.textContent = event.currentTarget.value;
 }

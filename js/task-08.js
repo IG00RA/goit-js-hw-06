@@ -1,16 +1,16 @@
-const formObj = document.querySelector(".login-form");
-const emailObj = document.querySelector('input[name="email"]');
-const passwObj = document.querySelector('input[name="password"]');
-const submitObj = document.querySelector('button[type="submit"]');
+const formElem = document.querySelector(".login-form");
+const emailElem = document.querySelector('input[name="email"]');
+const passwElem = document.querySelector('input[name="password"]');
+const submitElem = document.querySelector('button[type="submit"]');
 
-formObj.addEventListener("submit", handleSubmit);
+formElem.addEventListener("submit", handleSubmit);
 
 function handleSubmit(event) {
   event.preventDefault();
   const {
     elements: { email, password },
   } = event.currentTarget;
-  if (emailObj.value === "" || passwObj.value === "") {
+  if (emailElem.value === "" || passwElem.value === "") {
     return alert("Please enter a valid value");
   }
   const inputData = {
