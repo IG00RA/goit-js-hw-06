@@ -1,11 +1,15 @@
-const inputElem: HTMLElement | null = document.querySelector("#name-input");
-const spanElem = document.querySelector("#name-output");
+const inputEl: HTMLElement | null = document.querySelector("#name-input");
+const spanEl: HTMLElement | null = document.querySelector("#name-output");
 
-inputElem.addEventListener("input", inputFunc);
+if (inputEl) {
+  inputEl.addEventListener("input", inputFunc);
+}
 
-function inputFunc(event) {
-  spanElem.textContent = event.currentTarget.value;
-  if (spanElem.textContent === "") {
-    spanElem.textContent = "Anonymous";
+function inputFunc(event: InputEvent): void {
+  if (spanEl && event.currentTarget instanceof HTMLInputElement) {
+    spanEl.textContent = event.currentTarget.value;
+    if (spanEl.textContent === "") {
+      spanEl.textContent = "Anonymous";
+    }
   }
 }

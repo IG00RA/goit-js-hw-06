@@ -1,4 +1,4 @@
-const inputElem = document.querySelector("#validation-input");
+const inputElem HTMLElement | null = document.querySelector("#validation-input");
 const maxLength = inputElem.dataset.length;
 inputElem.addEventListener("blur", submitFunc);
 function submitFunc() {
