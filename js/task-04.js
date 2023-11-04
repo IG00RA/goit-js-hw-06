@@ -4,11 +4,19 @@ const valueElem = document.querySelector("#value");
 let counterValue = 0;
 function decrement() {
     counterValue -= 1;
-    return (valueElem.textContent = counterValue);
+    if (valueElem) {
+        valueElem.textContent = counterValue.toString();
+    }
 }
 function increment() {
     counterValue += 1;
-    return (valueElem.textContent = counterValue);
+    if (valueElem) {
+        valueElem.textContent = counterValue.toString();
+    }
 }
-decrBtnElem.addEventListener("click", decrement);
-incrBtnElem.addEventListener("click", increment);
+if (decrBtnElem) {
+    decrBtnElem.addEventListener("click", decrement);
+}
+if (incrBtnElem) {
+    incrBtnElem.addEventListener("click", increment);
+}

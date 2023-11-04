@@ -1,14 +1,26 @@
-const decrBtnElem = document.querySelector('[data-action="decrement"]');
-const incrBtnElem = document.querySelector('[data-action="increment"]');
-const valueElem = document.querySelector("#value");
-let counterValue = 0;
-function decrement() {
+const decrBtnElem: HTMLElement | null = document.querySelector(
+  '[data-action="decrement"]'
+);
+const incrBtnElem: HTMLElement | null = document.querySelector(
+  '[data-action="increment"]'
+);
+const valueElem: HTMLElement | null = document.querySelector("#value");
+let counterValue: number = 0;
+function decrement(): void {
   counterValue -= 1;
-  return (valueElem.textContent = counterValue);
+  if (valueElem) {
+    valueElem.textContent = counterValue.toString();
+  }
 }
-function increment() {
+function increment(): void {
   counterValue += 1;
-  return (valueElem.textContent = counterValue);
+  if (valueElem) {
+    valueElem.textContent = counterValue.toString();
+  }
 }
-decrBtnElem.addEventListener("click", decrement);
-incrBtnElem.addEventListener("click", increment);
+if (decrBtnElem) {
+  decrBtnElem.addEventListener("click", decrement);
+}
+if (incrBtnElem) {
+  incrBtnElem.addEventListener("click", increment);
+}

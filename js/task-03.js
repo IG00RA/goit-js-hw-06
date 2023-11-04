@@ -14,9 +14,11 @@ const images = [
 ];
 const ulEl = document.querySelector(".gallery");
 const imgEl = images
-    .map((image) => `<li><img src="${image.url}" alt="${image.alt}" width="350px"/></li>`)
+    .map((image) => `<li><img src="${image.url}" alt="${image.alt}" width="350px" height="250px"/></li>`)
     .join("");
-ulEl.style.display = "flex";
-ulEl.style.backgroundColor = "coral";
-ulEl.style.gap = "30px";
-ulEl.insertAdjacentHTML("beforeend", imgEl);
+if (ulEl) {
+    ulEl.style.display = "flex";
+    ulEl.style.backgroundColor = "coral";
+    ulEl.style.gap = "30px";
+    ulEl.insertAdjacentHTML("beforeend", imgEl);
+}

@@ -1,4 +1,4 @@
-const inputElem = document.querySelector("#name-input");
+const inputElem: HTMLElement | null = document.querySelector("#name-input");
 const spanElem = document.querySelector("#name-output");
 
 inputElem.addEventListener("input", inputFunc);
