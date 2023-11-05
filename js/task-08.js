@@ -1,18 +1,18 @@
 const formElem = document.querySelector(".login-form");
-const emailElem = document.querySelector('input[name="email"]');
-const passwElem = document.querySelector('input[name="password"]');
-const submitElem = document.querySelector('button[type="submit"]');
-formElem.addEventListener("submit", handleSubmit);
+formElem === null || formElem === void 0 ? void 0 : formElem.addEventListener("submit", handleSubmit);
 function handleSubmit(event) {
     event.preventDefault();
-    const { elements: { email, password }, } = event.currentTarget;
-    if (emailElem.value === "" || passwElem.value === "") {
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const email = formData.get("email");
+    const password = formData.get("password");
+    if (email === "" || password === "") {
         return alert("Please enter a valid value");
     }
     const inputData = {
-        email: email.value,
-        password: password.value,
+        email,
+        password,
     };
     console.log(inputData);
-    event.currentTarget.reset();
+    form.reset();
 }
